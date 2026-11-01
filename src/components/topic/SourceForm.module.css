@@ -1,0 +1,95 @@
+.details {
+  margin-top: 8px;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 var(--gutter);
+  color: var(--acid);
+  font: 600 12px/1 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.summary:hover {
+  background: var(--raised);
+}
+.details[open] .summary {
+  border-bottom: 1px solid var(--bd);
+}
+.form {
+  padding: 4px var(--gutter) 16px;
+}
+.kinds {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.radios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.radio {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  border: 1px solid var(--bd-strong);
+  color: var(--dim);
+  font: 600 12px/1 var(--mono);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.radio:hover {
+  color: var(--tx);
+}
+.radioOn {
+  border-color: var(--acid);
+  background: var(--acid);
+  color: var(--on-acid);
+}
+.radioOn:hover {
+  color: var(--on-acid);
+}
+.radio:has(:focus-visible) {
+  outline: 2px solid var(--acid);
+  outline-offset: 2px;
+}
+.file {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--dim);
+  font-size: 14px;
+}
+.file::file-selector-button {
+  min-height: 36px;
+  margin-right: 12px;
+  padding: 0 12px;
+  border: 1px solid var(--bd-strong);
+  border-radius: 0;
+  background: var(--raised);
+  color: var(--tx);
+  font: 600 12px/1 var(--mono);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.submit {
+  width: 100%;
+  margin-top: 16px;
+}
+@media (min-width: 1024px) {
+  .details {
+    border: 1px solid var(--bd);
+  }
+}

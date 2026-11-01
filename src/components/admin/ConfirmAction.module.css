@@ -1,0 +1,31 @@
+.ask {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--red);
+}
+.question {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* Distruttivo: bordo e testo rossi, non un riempimento; il rosso non è mai l'unico segno, c'è la domanda scritta. */
+.danger,
+.danger:hover {
+  background: transparent;
+  border-color: var(--red);
+  color: var(--red);
+}
+.danger:hover {
+  background: var(--raised);
+}
+.danger:focus-visible {
+  outline-color: var(--red);
+}

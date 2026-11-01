@@ -1,0 +1,20 @@
+/* Come .gh del mockup: mono maiuscolo, il numero in acido. */
+.group {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px var(--gutter) 6px;
+}
+.title {
+  margin: 0;
+  color: var(--dim);
+  font: 600 12px/1.2 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.count {
+  margin: 0;
+  color: var(--acid);
+  font: 600 12px/1 var(--mono);
+}

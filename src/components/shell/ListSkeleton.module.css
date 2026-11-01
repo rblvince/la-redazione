@@ -1,0 +1,78 @@
+.search {
+  height: 44px;
+  margin: 8px var(--gutter) 0;
+  border: 1px solid var(--bd);
+}
+.group {
+  width: 120px;
+  height: 12px;
+  margin: 26px var(--gutter) 10px;
+  background: var(--bd);
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+  background: var(--panel);
+}
+.row {
+  display: flex;
+  gap: 10px;
+  padding: 14px var(--gutter);
+}
+.row + .row {
+  border-top: 1px solid var(--bd);
+}
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 9px;
+}
+.bar {
+  display: block;
+  background: var(--bd);
+}
+.line {
+  height: 14px;
+}
+.meta {
+  width: 46%;
+  height: 11px;
+}
+.panels {
+  padding-top: max(8px, env(safe-area-inset-top));
+}
+.heading {
+  width: 220px;
+  height: 22px;
+  margin: 16px var(--gutter) 0;
+  background: var(--bd);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar,
+  .heading,
+  .group {
+    animation: sk 1.4s ease-in-out infinite;
+  }
+  @keyframes sk {
+    50% {
+      opacity: 0.45;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .list {
+    background: var(--bg);
+    border-top: 0;
+  }
+  .panels {
+    padding: 8px 24px;
+  }
+  .heading,
+  .group {
+    margin-inline: 0;
+  }
+}

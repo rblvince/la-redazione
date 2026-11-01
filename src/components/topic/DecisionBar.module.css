@@ -1,0 +1,59 @@
+/* Come .bar del mockup: fondo --panel, filetto sopra. Telefono: sopra la barra di navigazione. */
+.bar {
+  position: sticky;
+  bottom: calc(var(--tab-h) + env(safe-area-inset-bottom));
+  z-index: 10;
+  margin-top: 20px;
+  padding: 10px var(--gutter) 12px;
+  border-top: 1px solid var(--bd-strong);
+  background: var(--panel);
+}
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.summary {
+  margin: 0;
+  color: var(--dim);
+  font: 400 12px/1.4 var(--mono);
+}
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 1.2fr;
+  gap: 8px;
+}
+.btn {
+  min-height: 48px;
+  padding: 0 6px;
+  font-size: 12px;
+}
+.wide {
+  grid-column: 1 / -1;
+}
+.buttons:has(.wide) {
+  grid-template-columns: 1fr;
+}
+.hint {
+  margin: 0;
+  color: var(--dim);
+  font-size: 13px;
+}
+.pressedYes {
+  box-shadow: inset 0 0 0 2px var(--panel);
+}
+.pressedNo {
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: inset 0 0 0 1px var(--red);
+}
+.no:hover {
+  border-color: var(--red);
+}
+@media (min-width: 1024px) {
+  .bar {
+    bottom: 0;
+    padding-inline: 24px;
+  }
+}

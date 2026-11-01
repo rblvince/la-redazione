@@ -1,0 +1,6 @@
+.msg {
+  display: block;
+  margin-top: 10px;
+  color: var(--red);
+  line-height: 1.45;
+}

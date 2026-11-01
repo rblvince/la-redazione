@@ -1,0 +1,248 @@
+/* Telefono: una colonna, barra in basso. Da 1024px: barra laterale 196, elenco 340, dettaglio (schermata G del mockup). */
+.shell {
+  min-height: 100dvh;
+}
+.side {
+  display: none;
+}
+.main {
+  display: block;
+  padding-bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 84px);
+}
+.noFab {
+  padding-bottom: calc(var(--tab-h) + env(safe-area-inset-bottom));
+}
+.mid,
+.det {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.phoneHidden {
+  display: none;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: max(8px, env(safe-area-inset-top)) var(--gutter) 10px;
+}
+.top h1 {
+  flex: 1;
+  margin: 0;
+  font: 400 22px/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.topLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--dim);
+  font: 600 12px/1 var(--mono);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.topLink:disabled {
+  cursor: progress;
+}
+.topLink:hover,
+.topLink[aria-current='page'] {
+  color: var(--tx);
+}
+.hd {
+  display: none;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 44px;
+  padding: max(8px, env(safe-area-inset-top)) var(--gutter) 0;
+  color: var(--dim);
+  font: 600 12px/1 var(--mono);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.back:hover {
+  color: var(--tx);
+}
+
+@media (min-width: 1024px) {
+  .shell {
+    display: grid;
+    grid-template-columns: 196px 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    height: 100dvh;
+    overflow: clip;
+  }
+  .side {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 14px 10px;
+    background: var(--panel);
+    border-right: 1px solid var(--bd);
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    min-width: 0;
+    min-height: 0;
+    padding-bottom: 0;
+  }
+  .noFab {
+    padding-bottom: 0;
+  }
+  .mid,
+  .det {
+    max-width: none;
+    margin: 0;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  .phoneHidden {
+    display: block;
+  }
+  .mid {
+    border-right: 1px solid var(--bd);
+  }
+  .top {
+    display: none;
+  }
+  .hd {
+    display: block;
+    margin: 0;
+    padding: 12px var(--gutter);
+    border-bottom: 1px solid var(--bd);
+    font: 400 14px/1.2 var(--display);
+    text-transform: uppercase;
+  }
+  .back {
+    display: none;
+  }
+}
+
+.brand {
+  margin: 0;
+  padding: 2px 8px 14px;
+  font: 400 15px/1.2 var(--display);
+  text-transform: uppercase;
+}
+.brand span {
+  color: var(--acid);
+}
+.newTopic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 10px;
+  background: var(--acid);
+  color: var(--on-acid);
+  font: 400 13px/1 var(--display);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.newTopic:focus-visible {
+  outline-color: var(--tx);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 7px 8px;
+  color: var(--dim);
+  font-size: 13px;
+  text-decoration: none;
+  list-style: none;
+}
+a.nav:hover {
+  color: var(--tx);
+}
+.navOn,
+.navOn:hover {
+  background: var(--raised);
+  color: var(--tx);
+  box-shadow: inset 0 -2px 0 var(--acid);
+}
+.count {
+  margin-left: auto;
+  color: var(--faint);
+  font: 400 12px/1 var(--mono);
+}
+.sep {
+  margin: 0;
+  padding: 16px 8px 4px;
+  color: var(--faint);
+  font: 600 12px/1.2 var(--mono);
+  text-transform: uppercase;
+}
+.people {
+  margin: 0;
+  padding: 0;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--tx);
+  color: var(--tx);
+  font: 700 12px/1 var(--mono);
+}
+.invite {
+  margin-top: 8px;
+  color: var(--acid);
+}
+a.invite:hover {
+  color: var(--acid);
+}
+
+.sepLink {
+  display: block;
+  text-decoration: none;
+}
+.sepLink:hover {
+  color: var(--tx);
+}
+.sepOn,
+.sepOn:hover {
+  color: var(--acid);
+}
+
+/* "Esci" in fondo alla barra laterale: discreto, ma alto 44px come ogni bersaglio da toccare. */
+.exit {
+  margin-top: auto;
+  padding-top: 16px;
+}
+.exitBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 8px;
+  border: 0;
+  border-top: 1px solid var(--bd);
+  background: none;
+  color: var(--dim);
+  font: 600 12px/1 var(--mono);
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.exitBtn:hover {
+  color: var(--tx);
+}
+.exitBtn:disabled {
+  cursor: progress;
+}

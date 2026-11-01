@@ -1,0 +1,89 @@
+/* Selettore delle viste: tre segmenti come .seg del mockup, ma alti 44px. */
+.switch ul {
+  display: flex;
+  margin: 0 var(--gutter) 6px;
+  padding: 0;
+  border: 1px solid var(--bd);
+  list-style: none;
+}
+.switch li {
+  flex: 1;
+  min-width: 0;
+}
+.switch li + li {
+  border-left: 1px solid var(--bd);
+}
+.seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 4px;
+  color: var(--dim);
+  font: 600 12px/1.1 var(--mono);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.seg:hover {
+  background: var(--raised);
+  color: var(--tx);
+}
+.seg:focus-visible {
+  outline-offset: -3px;
+}
+.segOn,
+.segOn:hover {
+  background: var(--acid);
+  color: var(--on-acid);
+}
+.segOn:focus-visible {
+  outline-color: var(--tx);
+}
+
+/* Elenco: filetti 1px, fondo pannello (come .list del mockup). Da 1024px sta sul fondo scuro, come l'indice del Manuale. */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+  background: var(--panel);
+}
+.list > li + li {
+  border-top: 1px solid var(--bd);
+}
+@media (min-width: 1024px) {
+  .list {
+    background: var(--bg);
+    border-top: 0;
+  }
+}
+.clear {
+  margin: 0;
+  padding: 10px var(--gutter);
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+  color: var(--dim);
+  font: 400 13px/1.4 var(--mono);
+}
+
+/* Colonna del tema aperto: finché non se ne sceglie uno, dice cosa fare. */
+.idle {
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  min-height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+.idleTitle {
+  margin: 0;
+  color: var(--dim);
+  font: 400 15px/1.2 var(--display);
+  text-transform: uppercase;
+}
+.idleHint {
+  margin: 0;
+  color: var(--faint);
+}

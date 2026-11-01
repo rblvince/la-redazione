@@ -1,0 +1,39 @@
+.details {
+  margin-top: 8px;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 var(--gutter);
+  color: var(--acid);
+  font: 600 12px/1 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.summary:hover {
+  background: var(--raised);
+}
+.details[open] .summary {
+  border-bottom: 1px solid var(--bd);
+}
+.form {
+  padding: 4px var(--gutter) 16px;
+}
+.submit {
+  width: 100%;
+  margin-top: 16px;
+}
+@media (min-width: 1024px) {
+  .details {
+    border: 1px solid var(--bd);
+  }
+}

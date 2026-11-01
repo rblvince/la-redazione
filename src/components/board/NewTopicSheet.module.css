@@ -1,0 +1,220 @@
+/* Telefono: pannello dal basso (B del mockup: filetto acido sopra, fondo --panel). Da 1024px: finestra al centro. */
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgb(5 7 5 / 0.72);
+}
+.sheet {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 41;
+  width: 100%;
+  max-width: none;
+  max-height: 92dvh;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  border: 0;
+  border-top: 2px solid var(--acid);
+  background: var(--panel);
+  color: var(--tx);
+}
+.sheet::backdrop {
+  background: transparent;
+}
+.sheet:modal {
+  max-height: 92dvh;
+  max-width: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sheet {
+    transition:
+      transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.2s ease-out;
+    @starting-style {
+      transform: translateY(24px);
+      opacity: 0;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .sheet,
+  .sheet:modal {
+    inset: 0;
+    width: min(520px, calc(100vw - 48px));
+    max-height: min(680px, calc(100dvh - 48px));
+    margin: auto;
+    border: 1px solid var(--bd-strong);
+    border-top: 2px solid var(--acid);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 14px var(--gutter) max(24px, env(safe-area-inset-bottom));
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.heading {
+  margin: 0;
+  font: 400 17px/1.2 var(--display);
+  text-transform: uppercase;
+}
+.close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  color: var(--dim);
+}
+.close:hover {
+  color: var(--tx);
+}
+
+.label {
+  display: block;
+  margin: 12px 0 6px;
+  padding: 0;
+  color: var(--dim);
+  font: 600 12px/1.2 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.opt {
+  color: var(--faint);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--bd-strong);
+  border-radius: 0;
+  background: var(--raised);
+  color: var(--tx);
+  font-size: 16px; /* sotto i 16px iOS ingrandisce la pagina al tocco */
+  line-height: 1.4;
+}
+textarea.field {
+  min-height: 96px;
+  resize: vertical;
+}
+.input {
+  min-height: 44px;
+  font-family: var(--mono);
+  font-size: 14px;
+}
+.field::placeholder {
+  color: var(--faint);
+  opacity: 1;
+}
+.field:focus {
+  border-color: var(--acid);
+}
+.field:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 0;
+}
+.field:disabled {
+  opacity: 0.6;
+}
+
+.formats {
+  min-width: 0;
+  margin: 8px 0 0;
+  padding: 0;
+  border: 0;
+}
+.formats .label {
+  float: left; /* una legenda non ha margini affidabili: la tiro fuori dal flusso e la riallineo come le altre etichette */
+  width: 100%;
+  margin-top: 4px;
+}
+.formats .label + * {
+  clear: both;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--bd-strong);
+  border-radius: 0;
+  background: transparent;
+  color: var(--dim);
+  font: 600 12px/1.2 var(--mono);
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+}
+.chip:hover {
+  border-color: var(--tx);
+  color: var(--tx);
+}
+.chipOn,
+.chipOn:hover {
+  border-color: var(--acid);
+  background: var(--acid);
+  color: var(--on-acid);
+}
+.chip:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 10px;
+  border: 1px solid var(--red);
+  color: var(--red);
+  line-height: 1.35;
+}
+.error svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 0;
+  background: var(--acid);
+  color: var(--on-acid);
+  font: 400 14px/1 var(--display);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.submit:focus-visible {
+  outline-color: var(--tx);
+}
+.submit:disabled {
+  background: var(--raised);
+  border: 1px solid var(--bd-strong);
+  color: var(--dim);
+  cursor: progress;
+}
+.note {
+  margin: 10px 0 0;
+  color: var(--faint);
+  font: 400 12px/1.4 var(--mono);
+}

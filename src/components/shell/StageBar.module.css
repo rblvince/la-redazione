@@ -1,0 +1,32 @@
+.ticks {
+  display: flex;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tick {
+  flex: 1;
+  height: 5px;
+  background: var(--bd);
+}
+.done {
+  background: var(--acid);
+}
+.cur {
+  background: repeating-linear-gradient(90deg, var(--acid) 0 4px, transparent 4px 7px);
+}
+.label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 12px;
+  margin: 0;
+  padding: 6px 0 12px;
+  font: 400 12px/1.4 var(--mono);
+  color: var(--faint);
+}
+.label b {
+  color: var(--acid);
+  font-weight: 600;
+}

@@ -1,0 +1,191 @@
+/* Pezzi condivisi dalla pagina del tema: pannello, intestazione di sezione, bottoni, campi, avvisi.
+   Stesso vocabolario della bacheca (NewTopicSheet): angoli vivi, mono per le etichette, Archivio Black per i comandi. */
+
+.section {
+  margin: 0 0 8px;
+}
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px var(--gutter) 8px;
+}
+.title {
+  margin: 0;
+  color: var(--dim);
+  font: 600 12px/1.2 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.note {
+  margin: 0;
+  color: var(--acid);
+  font: 600 12px/1.2 var(--mono);
+  text-align: right;
+}
+
+.panel {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+@media (min-width: 1024px) {
+  .head {
+    padding-inline: 0;
+  }
+  .panel {
+    border: 1px solid var(--bd);
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--acid);
+  border-radius: 0;
+  background: var(--acid);
+  color: var(--on-acid);
+  font: 400 13px/1.1 var(--display);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out;
+}
+.btn:hover {
+  background: #d6ff6b;
+  border-color: #d6ff6b;
+}
+.btn:focus-visible {
+  outline-color: var(--tx);
+}
+.ghost {
+  background: transparent;
+  border-color: var(--bd-strong);
+  color: var(--tx);
+}
+.ghost:hover {
+  background: var(--raised);
+  border-color: var(--tx);
+}
+.ghost:focus-visible {
+  outline-color: var(--acid);
+}
+.sm {
+  min-height: 44px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+.btn:disabled {
+  background: var(--raised);
+  border-color: var(--bd-strong);
+  color: var(--dim);
+  cursor: default;
+}
+.btn[aria-busy='true']:disabled {
+  cursor: progress;
+}
+
+.label {
+  display: block;
+  margin: 14px 0 6px;
+  padding: 0;
+  color: var(--dim);
+  font: 600 12px/1.2 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.opt {
+  color: var(--faint);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--bd-strong);
+  border-radius: 0;
+  background: var(--raised);
+  color: var(--tx);
+  font-size: 16px; /* sotto i 16px iOS ingrandisce la pagina al tocco */
+  line-height: 1.4;
+}
+textarea.field {
+  min-height: 84px;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+input.field,
+select.field {
+  min-height: 44px;
+}
+.mono {
+  font-family: var(--mono);
+  font-size: 14px;
+}
+.field::placeholder {
+  color: var(--faint);
+  opacity: 1;
+}
+.field:focus {
+  border-color: var(--acid);
+}
+.field:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 0;
+}
+.field:disabled {
+  opacity: 0.6;
+}
+select.field {
+  color-scheme: dark;
+}
+
+.hint {
+  margin: 8px 0 0;
+  color: var(--faint);
+  font: 400 12px/1.45 var(--mono);
+}
+
+/* Esito di un'azione: la regione è sempre nel DOM, così i lettori di schermo annunciano ciò che ci entra. */
+.live {
+  min-height: 0;
+}
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 9px 10px;
+  border: 1px solid var(--bd-strong);
+  color: var(--tx);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.notice svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+.noticeOk svg {
+  color: var(--acid);
+}
+.noticeErr {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.empty {
+  margin: 0;
+  padding: 14px var(--gutter);
+  color: var(--dim);
+  font: 400 13px/1.45 var(--mono);
+}

@@ -1,0 +1,20 @@
+.idle {
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  min-height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+.title {
+  margin: 0;
+  color: var(--dim);
+  font: 400 15px/1.2 var(--display);
+  text-transform: uppercase;
+}
+.hint {
+  margin: 0;
+  max-width: 38ch;
+  color: var(--faint);
+  text-wrap: balance;
+}

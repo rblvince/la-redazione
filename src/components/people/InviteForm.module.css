@@ -1,0 +1,107 @@
+.form,
+.done {
+  max-width: 460px;
+}
+.roles {
+  min-width: 0;
+  margin: 18px 0 0;
+  padding: 0;
+  border: 0;
+}
+.roles legend {
+  padding: 0;
+}
+.role {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 44px;
+  padding: 11px 12px;
+  border: 1px solid var(--bd-strong);
+  cursor: pointer;
+}
+.role + .role {
+  margin-top: -1px;
+}
+.role:has(:checked) {
+  border-color: var(--acid);
+  position: relative;
+  z-index: 1;
+}
+.role:has(:focus-visible) {
+  outline: 2px solid var(--acid);
+  outline-offset: 2px;
+}
+.radio {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  accent-color: var(--acid);
+}
+.roleName {
+  display: block;
+  font-weight: 600;
+}
+.roleHint {
+  display: block;
+  margin-top: 2px;
+  color: var(--dim);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.submit {
+  width: 100%;
+  margin-top: 16px;
+}
+.doneTitle {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 14px;
+  font: 400 17px/1.25 var(--display);
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.email {
+  text-transform: none;
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: 0;
+}
+.doneTitle svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--acid);
+}
+.linkRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.link {
+  font-size: 13px;
+  text-overflow: ellipsis;
+}
+.facts {
+  margin: 16px 0;
+  padding: 0 0 0 18px;
+  color: var(--dim);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.facts li + li {
+  margin-top: 4px;
+}
+@media (min-width: 560px) {
+  .linkRow {
+    flex-direction: row;
+  }
+  .link {
+    flex: 1;
+    min-width: 0;
+  }
+  .linkRow button {
+    flex: 0 0 auto;
+  }
+}

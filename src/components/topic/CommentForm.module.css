@@ -1,0 +1,16 @@
+.form {
+  padding: 8px var(--gutter) 4px;
+}
+.area {
+  min-height: 72px;
+}
+.row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+@media (min-width: 1024px) {
+  .form {
+    padding-inline: 0;
+  }
+}

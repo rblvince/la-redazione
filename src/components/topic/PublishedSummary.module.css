@@ -1,0 +1,142 @@
+.props {
+  margin: 0;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.row {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px var(--gutter);
+}
+.row + .row {
+  border-top: 1px dashed var(--bd);
+}
+.row dt {
+  padding-top: 4px;
+  color: var(--faint);
+  font: 600 12px/1.2 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.row dd {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 24px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.none {
+  color: var(--dim);
+}
+.post,
+.plain {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.post {
+  color: var(--acid);
+  text-underline-offset: 3px;
+}
+.post svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+}
+.corrections {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.correction {
+  padding: 12px var(--gutter);
+}
+.correction + .correction {
+  border-top: 1px dashed var(--bd);
+}
+.cMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 4px;
+  font: 600 12px/1.2 var(--mono);
+  text-transform: uppercase;
+}
+.cMeta b {
+  color: var(--acid);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.cMeta time {
+  color: var(--faint);
+  font-weight: 400;
+}
+.text,
+.why,
+.newLink {
+  margin: 0;
+  max-width: var(--measure);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.why,
+.newLink {
+  margin-top: 6px;
+  color: var(--dim);
+  font-size: 13px;
+}
+.why span,
+.newLink span:first-child {
+  color: var(--faint);
+  font: 600 12px/1 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.newLink a {
+  color: var(--acid);
+  text-underline-offset: 3px;
+}
+.empty {
+  margin: 0;
+  padding: 12px var(--gutter);
+  border-block: 1px dashed var(--bd-strong);
+  color: var(--dim);
+  font: 400 13px/1.45 var(--mono);
+}
+.history {
+  margin: 0;
+  padding: 0 var(--gutter);
+  list-style: none;
+}
+.history li {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 10px;
+  padding: 7px 0;
+  color: var(--dim);
+  font: 400 12px/1.45 var(--mono);
+  overflow-wrap: anywhere;
+}
+.history li + li {
+  border-top: 1px dashed var(--bd);
+}
+.history time {
+  color: var(--faint);
+}
+@media (min-width: 1024px) {
+  .props,
+  .corrections {
+    border: 1px solid var(--bd);
+  }
+  .empty {
+    border-inline: 1px dashed var(--bd-strong);
+  }
+  .history {
+    padding-inline: 0;
+  }
+}

@@ -1,0 +1,21 @@
+.fab {
+  position: fixed;
+  right: max(var(--gutter), env(safe-area-inset-right));
+  bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 14px);
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  background: var(--acid);
+  color: var(--on-acid);
+  text-decoration: none;
+}
+.fab:focus-visible {
+  outline-color: var(--tx);
+}
+@media (min-width: 1024px) {
+  .fab {
+    display: none;
+  }
+}

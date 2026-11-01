@@ -1,0 +1,25 @@
+.actions {
+  margin-top: 10px;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.danger {
+  border-color: var(--red);
+  color: var(--red);
+}
+.danger:hover {
+  background: var(--raised);
+  border-color: var(--red);
+}
+.shot {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  margin-top: 10px;
+  border: 1px solid var(--bd-strong);
+  background: var(--raised);
+  object-fit: contain;
+}

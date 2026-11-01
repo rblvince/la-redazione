@@ -1,0 +1,48 @@
+.topic {
+  padding-bottom: 8px;
+}
+.head {
+  padding: 4px var(--gutter) 6px;
+}
+.title {
+  margin: 4px 0 14px;
+  font: 400 19px/1.12 var(--display);
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.body {
+  margin: 14px 0 0;
+  max-width: var(--measure);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.readonly {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 9px 10px;
+  border: 1px solid var(--bd-strong);
+  color: var(--dim);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.readonly svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+@media (min-width: 1024px) {
+  .topic {
+    max-width: 720px;
+    padding-inline: 24px;
+  }
+  .head {
+    padding: 20px 0 6px;
+  }
+  .title {
+    font-size: 22px;
+  }
+}

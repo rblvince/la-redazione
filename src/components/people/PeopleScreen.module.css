@@ -1,0 +1,56 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+  background: var(--panel);
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 8px var(--gutter);
+}
+.row + .row {
+  border-top: 1px solid var(--bd);
+}
+.name {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.you {
+  color: var(--faint);
+  font: 400 12px/1 var(--mono);
+}
+.inviteLink {
+  margin: 16px var(--gutter) 0;
+}
+.pane {
+  padding: max(8px, env(safe-area-inset-top)) var(--gutter) 24px;
+}
+.heading {
+  margin: 12px 0 6px;
+  font: 400 22px/1.1 var(--display);
+  text-transform: uppercase;
+}
+.lead {
+  max-width: 46ch;
+  margin: 0 0 6px;
+  color: var(--dim);
+}
+@media (min-width: 1024px) {
+  .list {
+    background: var(--bg);
+    border-top: 0;
+  }
+  .pane {
+    padding: 24px;
+  }
+  .inviteLink {
+    display: none; /* in barra laterale ci sono già "Invita persona" e "Amministrazione" */
+  }
+}

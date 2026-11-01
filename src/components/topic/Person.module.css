@@ -1,0 +1,21 @@
+.person {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.av {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--tx);
+  color: var(--tx);
+  font: 700 12px/1 var(--mono);
+}
+.me {
+  border-color: var(--acid);
+  background: var(--acid);
+  color: var(--on-acid);
+}

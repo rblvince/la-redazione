@@ -1,0 +1,98 @@
+/* Come .gate del mockup: intestazione con orologio oro (o segno di via libera acido), righe con icona e motivo. */
+.gate {
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px var(--gutter);
+  color: var(--gold);
+}
+.header.open {
+  color: var(--acid);
+}
+.state {
+  margin: 0;
+  color: var(--tx);
+  font: 400 15px/1.2 var(--display);
+  text-transform: uppercase;
+}
+.sub {
+  margin: 4px 0 0;
+  color: var(--dim);
+  font-size: 13px;
+}
+.lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px dashed var(--bd);
+}
+.line {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 11px var(--gutter);
+  line-height: 1.4;
+}
+.line + .line {
+  border-top: 1px dashed var(--bd);
+}
+.line svg {
+  margin-top: 1px;
+}
+.bad {
+  color: var(--red);
+}
+.wait {
+  color: var(--gold);
+}
+.review {
+  padding: 12px var(--gutter);
+  border-top: 1px solid var(--bd);
+}
+.done,
+.lock {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  color: var(--dim);
+  line-height: 1.4;
+}
+.done {
+  color: var(--acid);
+}
+.done svg,
+.lock svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+.publish {
+  padding: 2px var(--gutter) 16px;
+  border-top: 1px solid var(--bd);
+}
+.submit {
+  width: 100%;
+  margin-top: 12px;
+}
+.reason {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 10px 0 0;
+  color: var(--dim);
+  font: 400 12px/1.45 var(--mono);
+}
+.reason svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+@media (min-width: 1024px) {
+  .gate {
+    border: 1px solid var(--bd);
+  }
+}

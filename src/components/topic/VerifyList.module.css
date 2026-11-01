@@ -1,0 +1,96 @@
+/* Come .ck del mockup: riga con quadratino da 16px (acido quando fatto) e, sotto, chi e quando. */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.item + .item {
+  border-top: 1px dashed var(--bd);
+}
+.row {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  min-height: 48px;
+  padding: 12px var(--gutter);
+  cursor: pointer;
+}
+.row:hover {
+  background: var(--raised);
+}
+.static {
+  cursor: default;
+}
+.static:hover {
+  background: transparent;
+}
+.box {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  border: 1.5px solid var(--bd-strong);
+  border-radius: 0;
+  background: transparent;
+  cursor: inherit;
+}
+.box:checked {
+  border-color: var(--acid);
+  background: var(--acid);
+}
+.box:checked::after {
+  content: '';
+  width: 9px;
+  height: 5px;
+  margin-top: -2px;
+  border-left: 2px solid var(--on-acid);
+  border-bottom: 2px solid var(--on-acid);
+  transform: rotate(-45deg);
+}
+.box:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 3px;
+}
+.box:disabled {
+  opacity: 1;
+}
+.row:has(.box:disabled:not(:checked)) .label {
+  color: var(--dim);
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.label {
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+.who {
+  color: var(--dim);
+  font: 400 12px/1.3 var(--mono);
+}
+.count {
+  margin: 0;
+  padding: 8px var(--gutter) 0;
+  color: var(--faint);
+  font: 400 12px/1.2 var(--mono);
+}
+.notice {
+  padding: 0 var(--gutter);
+}
+@media (min-width: 1024px) {
+  .list {
+    border: 1px solid var(--bd);
+  }
+  .count,
+  .notice {
+    padding-inline: 0;
+  }
+}

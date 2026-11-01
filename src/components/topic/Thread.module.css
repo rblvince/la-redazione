@@ -1,0 +1,67 @@
+/* Come .thread / .msg / .ev del mockup: nome acido mono maiuscolo, corpo 13px, eventi mono 12px. */
+.thread {
+  margin: 0;
+  padding: 4px var(--gutter);
+  list-style: none;
+}
+.msg {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+}
+.msg + .msg,
+.ev + .msg,
+.msg + .ev {
+  border-top: 1px dashed var(--bd);
+}
+.who {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 3px;
+  font: 600 12px/1.2 var(--mono);
+  text-transform: uppercase;
+}
+.who b {
+  color: var(--acid);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.who time,
+.ev time {
+  color: var(--faint);
+  font-weight: 400;
+  text-transform: none;
+}
+.body {
+  margin: 0;
+  max-width: var(--measure);
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.ev {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 12px;
+  padding: 8px 0 8px 34px;
+  color: var(--dim);
+  font: 400 12px/1.45 var(--mono);
+  overflow-wrap: anywhere;
+}
+.empty {
+  margin: 0;
+  padding: 12px var(--gutter);
+  color: var(--dim);
+  font: 400 13px/1.45 var(--mono);
+}
+@media (min-width: 1024px) {
+  .thread,
+  .empty {
+    padding-inline: 0;
+  }
+}

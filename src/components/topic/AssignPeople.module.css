@@ -1,0 +1,50 @@
+.read {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin: 0;
+  padding: 12px var(--gutter);
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.read div {
+  min-width: 0;
+}
+.read dt {
+  margin-bottom: 4px;
+  color: var(--faint);
+  font: 600 12px/1.2 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.read dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.none {
+  color: var(--dim);
+}
+.form {
+  padding: 4px var(--gutter) 14px;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.same {
+  margin: 8px 0 0;
+  color: var(--red);
+  font-size: 13px;
+}
+.save {
+  margin-top: 12px;
+}
+@media (min-width: 1024px) {
+  .read,
+  .form {
+    border: 1px solid var(--bd);
+  }
+}

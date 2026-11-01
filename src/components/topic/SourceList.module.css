@@ -1,0 +1,65 @@
+/* Come .src del mockup: etichetta del tipo (primaria piena acida, secondaria contorno oro), dominio in mono. */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid var(--bd);
+  background: var(--panel);
+}
+.src {
+  padding: 12px var(--gutter);
+}
+.src + .src {
+  border-top: 1px dashed var(--bd);
+}
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.head > span {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+.title {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: 6px 0 0;
+  color: var(--faint);
+  font: 400 12px/1.4 var(--mono);
+}
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 24px;
+  color: var(--acid);
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+.bad {
+  color: var(--gold);
+}
+.empty {
+  margin: 0;
+  padding: 12px var(--gutter);
+  border-block: 1px dashed var(--bd-strong);
+  color: var(--dim);
+  font: 400 13px/1.45 var(--mono);
+}
+@media (min-width: 1024px) {
+  .list {
+    border: 1px solid var(--bd);
+  }
+  .empty {
+    border-inline: 1px dashed var(--bd-strong);
+  }
+}
