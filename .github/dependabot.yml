@@ -6,6 +6,15 @@ updates:
       interval: weekly
     cooldown:
       default-days: 7
+    groups:
+      react:
+        patterns:
+          - react
+          - react-dom
+    ignore:
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
   - package-ecosystem: github-actions
     directory: /
     schedule:
