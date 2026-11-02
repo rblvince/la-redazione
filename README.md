@@ -34,8 +34,11 @@ Requirements: Node.js 24, pnpm 12.5.1, and the Supabase CLI. The included handbo
 pnpm install
 supabase link --project-ref YOUR_PROJECT_REF
 supabase db push
+node --env-file=.env.local supabase/seed/bootstrap.ts --email you@example.com --nome "Your Name"
 pnpm dev
 ```
+
+Configure the Supabase project to send eight-digit email OTPs and use `{{ .Token }}` in the email template, as described in [the architecture notes](docs/architecture.md). The bootstrap command creates the first maintainer; invite-only access means nobody can sign in before then. It reads `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from `.env.local` via `--env-file` and should be run only once. Keep the service-role key only in `.env.local`; never expose it to the browser.
 
 The repository does not include `supabase/config.toml`; `supabase start` is therefore not configured here. Apply migrations to your linked project with `supabase db push`.
 
